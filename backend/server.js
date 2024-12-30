@@ -31,11 +31,12 @@ app.use("/api/coupons", couponRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
+
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static(path.join(__dirname, "/frontend/dist")));
+	app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+		res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
 	});
 }
 
@@ -47,10 +48,4 @@ app.listen(PORT, () => {
 
 
 
-// Username
-// luana23lg
 
-// Password
-// XBF3MMsOtIzVIMQ6
-
-// IP address (188.26.248.241)
